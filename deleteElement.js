@@ -24,9 +24,31 @@ function showOnscreen(obj){
     deleteButton.onclick=()=>{
         localStorage.removeItem(obj.email)
         parentElem.removeChild(childElem)
+    
+
+        
     }
+    const editButton=document.createElement('input')
+    editButton.type="button"
+    editButton.value="Edit"
+    editButton.onclick=()=>{
+        localStorage.removeItem(obj.email)
+        parentElem.removeChild(childElem)
+
+        document.getElementById('usernameInputTag').value=obj.name
+        document.getElementById('emailInputTag').value=obj.email
+        document.getElementById('phonenumberInputTag').value=obj.phonenumber
+
+    
+
+        
+    }
+
+
     childElem.appendChild(deleteButton)
+    childElem.appendChild(editButton)
     parentElem.appendChild(childElem)
+
 
 }
 
